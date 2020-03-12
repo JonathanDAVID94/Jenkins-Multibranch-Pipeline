@@ -4,7 +4,7 @@ pipeline {
 		stage('First') {
 			steps {
 				script {
-					env.EXECUTE="False"
+					env.EXECUTE="True"
 				}
 				sh 'echo "Step One"'
 			}
@@ -20,7 +20,7 @@ pipeline {
 		}
 		stage('Third') {
 		when {
-			environment name: 'EXECUTE', value: 'True'
+			environment name: 'EXECUTE', value: 'False'
 		}
 			steps {
 				sh 'echo "Step Three"'
