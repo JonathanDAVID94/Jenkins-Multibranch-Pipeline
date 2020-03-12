@@ -9,10 +9,10 @@ pipeline {
 				sh 'echo "Step One"'
 			}
 		}
- 		when {
+		stage('Second') {
+		when {
 			environment name: 'EXECUTE', value: 'True'
-                }
-		stage('Second') { 
+                } 
 			steps {
 				echo "Updating Second Stage"
 				sh 'echo "Step two"'
